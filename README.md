@@ -2,6 +2,8 @@
 '''
 Welcome to the machine learning course!
 
+Clone the attached yolov5 repository. 
+
 In support of the first microlecture on machine learning. You will find the YOLOV5 model trained on detecting defects in french fries.
 
 To make this happen you should have several python APIs installed on your computer.
