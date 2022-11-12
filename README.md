@@ -4,6 +4,14 @@ Welcome to the machine learning course!
 
 In support of the first microlecture on machine learning. You will find the YOLOV5 model trained on detecting defects in french fries.
 
+To make this happen you should have several python APIs installed on your computer.
+
+to do that, go to yolov5 folder and see the requirements.txt
+
+to install all the prerequisites execute the following command
+
+pip3 install -r requirements.txt
+
 To enable training. Lets first learn how to set it up.
 You will find two main folders.
 First is the datasets folder and the second is the yolov5 folder.
@@ -56,5 +64,31 @@ bounding box around them.
 YOLOv5 uses a combination of the file and the labels to know which area to learn from
 
 Once you set up the data in this fashion, training is simple. 
+
+go to the yolov5 folder and execute the following command from command prompt
+
+python3 train.py --data coco128.yaml --weights yolov5s.pt --img 640  # from pretrained (recommended)
+
+If you have python installed as python3 you can use only python on it.
+
+This training will take a significant amount of time. On a mac 16 inch it took 1.5 days so be ready on your laptop. So dont worry if you take some time.
+Also turn off your computers auto shut down features. (keep it shut for the duration of this course), you will be training and testing a lot of systems.
+
+Now once the model is trained and ready put the best.pt into the weights folder of yolov5. The best.pt would be found in the runs\exp<no>\weights folder. Copy paste it into weights folder of the yolov5 base folder (yolov5\weights). 
+
+Now to test the model, you can put the test images into yolov5\data\images folder. 
+
+Use this command from the yolov5 folder to now pass all the images in the yolov5\data\images folder through classification of errors. 
+python3 detect.py --weights weights/best.pt --source data/images
+
+This command will put all the tested images into runs\detect\exp<no> folder. you can see the results
+
+Now through this class you will get to play with this model and set it even more correctly. But today it is a handson approach to get started,\
+
+As a follow up, read about YOLOV5 model and what it can and cannot do! You can comment on it in the class blog. 
+  
+Happy Learning!
+
+
 
 '''
